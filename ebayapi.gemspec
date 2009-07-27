@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = %q{Grit is a Ruby library for extracting information from a git repository in an object oriented manner.}
   s.email = %q{tom@mojombo.com}
   s.extra_rdoc_files = ["README.md", "LICENSE"]
-  s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
+  s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*', 'examples/**/*'].to_a
 
   s.has_rdoc = true
   s.homepage = %q{http://rubyforge.org/projects/ebayapi/}
