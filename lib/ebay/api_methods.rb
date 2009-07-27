@@ -215,12 +215,7 @@ module Ebay
     #
     # Official Documentation for FetchToken[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_FetchToken.html]
     def fetch_token(params = {})
-      commit(Ebay::Requests::FetchToken, { 
-        :app_requester_credentials => Ebay::Types::AppRequesterCredentials.new({
-          :dev_id => self.class.dev_id,
-          :app_id => self.class.app_id,
-          :auth_cert => self.class.cert })
-      }.merge(params))
+      commit(Ebay::Requests::FetchToken, params)
     end
     # Builds Ebay::Requests#GetAccount
     #
