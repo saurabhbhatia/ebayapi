@@ -146,3 +146,18 @@ task :upload => :rdoc do
   pub = Rake::SshDirPublisher.new user, project, local_dir
   pub.upload
 end
+
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "ebayapi"
+    gemspec.summary = "Ruby interface to the eBay XML Trading API"
+    gemspec.description = "Ruby interface to the eBay XML Trading API"
+    gemspec.email = "codyfauser@gmail.com"
+    gemspec.homepage = "http://ebayapi.rubyforge.org/"
+    gemspec.authors = ["Cody Fauser"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+end
