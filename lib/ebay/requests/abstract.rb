@@ -1,4 +1,5 @@
 require 'ebay/types/xml_requester_credentials'
+require 'ebay/types/app_requester_credentials'
 require 'ebay/types/bot_block_request'
 
 module Ebay # :nodoc:
@@ -25,6 +26,7 @@ module Ebay # :nodoc:
       text_node :version, 'Version', :optional => true
       text_node :end_user_ip, 'EndUserIP', :optional => true
       object_node :requester_credentials, 'RequesterCredentials', :class => XMLRequesterCredentials, :optional => true
+      object_node :app_requester_credentials, 'RequesterCredentials', :class => AppRequesterCredentials, :optional => true      
       text_node :error_handling, 'ErrorHandling', :optional => true
       text_node :invocation_id, 'InvocationID', :optional => true
       text_node :output_selector, 'OutputSelector', :optional => true

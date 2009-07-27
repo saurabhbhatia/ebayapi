@@ -743,8 +743,15 @@ module Ebay
     #
     # Official Documentation for GetSessionID[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_GetSessionID.html]
     def get_session_id(params = {})
-      commit(Ebay::Requests::GetSessionID, params)
-    end
+      commit(Ebay::Requests::GetSessionID, 
+        { :ru_name => self.ru_name, 
+          :app_requester_credentials => Ebay::Types::AppRequesterCredentials.new({
+            :dev_id => self.class.dev_id,
+            :app_id => self.class.app_id,
+            :auth_cert => self.class.cert })
+        }.merge(params))
+    end    
+    
     # Builds Ebay::Requests#GetShippingDiscountProfiles
     #
     # Returns Ebay::Responses#GetShippingDiscountProfiles

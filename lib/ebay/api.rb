@@ -39,7 +39,7 @@ module Ebay #:nodoc:
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
-    cattr_accessor :dev_id, :app_id, :cert, :auth_token
+    cattr_accessor :dev_id, :app_id, :cert, :auth_token, :ru_name
     cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
     
@@ -126,8 +126,10 @@ module Ebay #:nodoc:
     end
     
     def invoke(request, format)
+      body = build_body(request)
+      # puts "ebay api.rb invoke: uri [#{service_uri.path}] body [#{body.gsub(/</, %Q[\n<])}]"
       response = connection.post( service_uri.path, 
-                                  build_body(request), 
+                                  body, 
                                   build_headers(request.call_name)
                                 )
       
