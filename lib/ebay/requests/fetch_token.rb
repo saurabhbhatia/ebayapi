@@ -9,6 +9,7 @@ module Ebay # :nodoc:
       include XML::Mapping
       include Initializer
       root_element_name 'FetchTokenRequest'
+      object_node :app_requester_credentials, 'RequesterCredentials', :class => AppRequesterCredentials, :optional => true      
       text_node :secret_id, 'SecretID', :optional => true
       text_node :session_id, 'SessionID', :optional => true
       boolean_node :include_rest_token, 'IncludeRESTToken', 'true', 'false', :optional => true
