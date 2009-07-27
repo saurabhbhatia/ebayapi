@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cody Fauser"]
   s.date = %q{2009-07-26}
-  s.description = %q{Grit is a Ruby library for extracting information from a git repository in an object oriented manner.}
+  s.description = %q{Ruby interface to the eBay XML Trading API}
   s.email = %q{codyfauser@gmail.com}
   s.extra_rdoc_files = ["README", "MIT-LICENSE", "CHANGELOG"]
   s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*', 'examples/**/*'].to_a
