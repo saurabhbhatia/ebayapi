@@ -127,7 +127,11 @@ module Ebay #:nodoc:
     
     def invoke(request, format)
       body = build_body(request)
-      # puts "ebay api.rb invoke: uri [#{service_uri.path}] body [#{body.gsub(/</, %Q[\n<])}]"
+
+      3.times { puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" } 
+      puts "ebay api.rb invoke: uri [#{service_uri.path}] body [#{body.gsub(/</, %Q[\n<])}]"
+      3.times { puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" }       
+
       response = connection.post( service_uri.path, 
                                   body, 
                                   build_headers(request.call_name)
@@ -184,6 +188,9 @@ module Ebay #:nodoc:
         result = XML::Mapping.load_object_from_xml(xml.root)
         case result.ack
         when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
+          3.times { puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" } 
+          puts "returned from ebay: #{content.gsub(/</, %Q[\n<])}"
+          3.times { puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" } 
           raise RequestError.new(result.errors)
         end
       when :raw
