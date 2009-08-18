@@ -157,6 +157,9 @@ begin
     gemspec.email = "codyfauser@gmail.com"
     gemspec.homepage = "http://ebayapi.rubyforge.org/"
     gemspec.authors = ["Cody Fauser"]
+    gemspec.add_dependency('xml-mapping', '>= 0.8.1')
+    gemspec.add_dependency('money', '= 1.7.1')
+    
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
