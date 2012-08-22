@@ -1236,6 +1236,6 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<xml-mapping>, [">= 0.8.1"])
-    s.add_dependency(%q<money>, ["= 1.7.1"])
+    s.add_dependency(%q<money>)
   end
 end
