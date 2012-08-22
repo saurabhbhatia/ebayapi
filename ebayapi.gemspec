@@ -1229,10 +1229,10 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<xml-mapping>, [">= 0.8.1"])
-      s.add_runtime_dependency(%q<money>, ["= 1.7.1"])
+      s.add_runtime_dependency(%q<money>)
     else
       s.add_dependency(%q<xml-mapping>, [">= 0.8.1"])
-      s.add_dependency(%q<money>, ["= 1.7.1"])
+      s.add_dependency(%q<money>)
     end
   else
     s.add_dependency(%q<xml-mapping>, [">= 0.8.1"])
